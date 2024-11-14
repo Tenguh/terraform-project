@@ -4,7 +4,6 @@ resource "aws_vpc" "myapp-vpc" {
     Name = "${var.env_prefix}-vpc"
   }
 }
-
 module "myapp-subnet" {
   source                 = "./modules/subnet"
   subnet_cidr_block      = var.subnet_cidr_block

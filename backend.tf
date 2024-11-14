@@ -5,3 +5,4 @@ terraform {
     key    = "modules/terraform.tfstate" #create a folder called modules in s3 and save the statefile in
   }
 }
+

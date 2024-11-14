@@ -1,5 +1,5 @@
 resource "aws_security_group" "security_group_id" {
-  vpc_id = aws_vpc.myapp-vpc.subnet_id
+  vpc_id = var.vpc_id
     ingress{
     from_port   = 22
     to_port     = 22
