@@ -101,7 +101,7 @@ entry-script
    - Make sure to indicate the backend you are using, the name of the bucket and the region in which the bucket was created.
    - Give it a key by creating a floder in s3 in which the statefile will be saved.
 
-   RUN $ terraform init 
+   RUN $ terraform init -reconfigure
    to initialize again since another root module has been added.
    - run $ terraform plan to view your infrastructure
    - run $ terraform apply -auto-approve to create the folder and save the statefile.
@@ -110,7 +110,8 @@ entry-script
  - After we creating the S3 bucket and migrated our state file in to it we now create DynamoDB state locking.
  - this is done by creating a table for Terraform state locking giving it a simple hash LockID key and one string attribute. 
  - We can write the code for this in our backend.tf file.
- - After that, run $ terraform apply command for Terraform to create our table within the DynamoDB service.
+ - After that, run $ terraform init -recongiure since our backend has been modified.
+ - run terraform apply -auto-approve to create our table within the DynamoDB service in AWS.
  - update our backend code block within our backend.tf file with the name of the recently created database.
  - run $ terraform init -reconfigure to reconfigure our state locking.
 
