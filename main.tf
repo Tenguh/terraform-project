@@ -7,13 +7,14 @@ resource "aws_vpc" "myapp-vpc" {
 module "myapp-subnet" {
   source                 = "./modules/subnet"
   subnet_cidr_block      = var.subnet_cidr_block
-  availability_zone      = var.availability_zone
+  availability_zone1      = var.availability_zone1
   env_prefix             = var.env_prefix
   vpc_id                 = aws_vpc.myapp-vpc.id
   default_route_table_id = aws_vpc.myapp-vpc.default_route_table_id
 }
+  
 
-module "myapp-server-1" {
+module "myapp-server" {
   source            = "./modules/webserver"
   availability_zone = var.availability_zone
   env_prefix        = var.env_prefix
