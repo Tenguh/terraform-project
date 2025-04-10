@@ -5,7 +5,7 @@ In this project I used Terraform in automating the infrastructure from scratch, 
 Next, I Configured Terraform backend with AWS S3 to save my statefile.This is useful for team collaboration and not forgetting security which is of prior importance in every environment.
 Also, i used AWS DynamoDB state locking in locking the state. With state locking, team members work simultaneously on the infrastructure without overwritting the state.Hence, state is modified at every stage.
 
-In other to follow up with the project, you will need the following prrequisites:
+In other to follow up with the project, you will need the following prerequisites:
  
  ##### Prerequisites 
   - Install and configure AWS CLI and Terraform
